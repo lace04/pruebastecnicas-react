@@ -1,45 +1,45 @@
-import { type User, SortBy } from '../types.d'
+import { type User, SortBy } from '../types.d';
 
 interface Props {
-  users: User[]
-  showColors: boolean
-  deleteUser: (uuid: string) => void
-  changeSorting: (sort: SortBy) => void
+  users: User[];
+  showColors: boolean;
+  deleteUser: (uuid: string) => void;
+  changeSorting: (sort: SortBy) => void;
 }
 
-export function UsersList ({
+export function UsersList({
   users,
   showColors,
   deleteUser,
-  changeSorting
+  changeSorting,
 }: Props) {
   return (
     <div className='mt-5 flex flex-col justify-center items-center'>
-      <h1 className='text-2xl mb-5'>Lista Usuarios</h1>
+      <h1 className='text-2xl font-semibold mb-10'>Lista Usuarios</h1>
       <table className='w-4/5 text-center'>
         <thead>
-          <tr>
+          <tr className='bg-slate-700 h-10'>
             <th>Foto</th>
             <th
-              className='cursor-pointer border-r-2 hover:bg-zinc-800 hover:rounded-md'
+              className='cursor-pointer border-r-2 hover:bg-slate-800'
               onClick={() => {
-                changeSorting(SortBy.NAME)
+                changeSorting(SortBy.NAME);
               }}
             >
               Nombre
             </th>
             <th
-              className='cursor-pointer border-r-2 hover:bg-zinc-800 hover:rounded-md'
+              className='cursor-pointer border-r-2 hover:bg-zinc-800'
               onClick={() => {
-                changeSorting(SortBy.LAST)
+                changeSorting(SortBy.LAST);
               }}
             >
               Apellido
             </th>
             <th
-              className='cursor-pointer border-r-2 hover:bg-zinc-800 hover:rounded-md'
+              className='cursor-pointer border-r-2 hover:bg-zinc-800'
               onClick={() => {
-                changeSorting(SortBy.COUNTRY)
+                changeSorting(SortBy.COUNTRY);
               }}
             >
               Pais
@@ -72,16 +72,18 @@ export function UsersList ({
                 <td>
                   <button
                     className='bg-zinc-700 p-1 rounded-md hover:bg-zinc-600 border transition'
-                    onClick={() => { deleteUser(user.login.uuid) }}
+                    onClick={() => {
+                      deleteUser(user.login.uuid);
+                    }}
                   >
                     Eliminar
                   </button>
                 </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
     </div>
-  )
+  );
 }

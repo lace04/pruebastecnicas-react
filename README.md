@@ -2,6 +2,8 @@
 
 This is a React application that uses TypeScript.
 
+![Screenshot #1](./public/sc.png)
+
 ## Installation
 
 1. Clone this repository.
