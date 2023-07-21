@@ -2,7 +2,7 @@
 
 This is a React application that uses TypeScript.
 
-![Screenshot #1](./public/sc.png)
+![Screenshot #1](./public/screen.png)
 
 ## Installation
 
